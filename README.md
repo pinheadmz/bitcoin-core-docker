@@ -1,3 +1,13 @@
+# Zip's PRs
+
+Example:
+
+```
+cd master
+docker buildx build --push --tag pinheadmz/bitcoin:pr35182-e8e4cb3238 --platform linux/arm64,linux/amd64 --build-arg COMMIT=e8e4cb323899341baf4f5f49382a916bc5c93fa9 .
+```
+
+
 # bitcoin/bitcoin
 
 [![bitcoin/bitcoin][docker-pulls]][docker-hub-url] [![bitcoin/bitcoin][docker-stars]][docker-hub-url] [![bitcoin/bitcoin][image-size-alpine]][image-size-alpine-url] [![bitcoin/bitcoin][image-size-debian]][image-size-debian-url] [![bitcoin/bitcoin][image-size-master-alpine]][image-size-master-alpine-url]
@@ -26,20 +36,17 @@
 
 ## Tags
 
-- `30.2`, `30`, `latest` ([30.2/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/30.2/Dockerfile)) [**multi-platform**]
-- `30.2-alpine`, `30-alpine`, `alpine` ([30.2/alpine/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/30.2/alpine/Dockerfile))
+- `31.0`, `31`, `latest` ([31.0/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/31.0/Dockerfile)) [**multi-platform**]
+- `31.0-alpine`, `31-alpine`, `alpine` ([31.0/alpine/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/31.0/alpine/Dockerfile))
+
+- `30.2`, `30` ([30.2/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/30.2/Dockerfile)) [**multi-platform**]
+- `30.2-alpine`, `30-alpine` ([30.2/alpine/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/30.2/alpine/Dockerfile))
 
 - `29.3`, `29` ([29.3/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/29.3/Dockerfile)) [**multi-platform**]
 - `29.3-alpine`, `29-alpine` ([29.3/alpine/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/29.3/alpine/Dockerfile))
 
 - `28.4`, `28` ([28.4/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/28.4/Dockerfile)) [**multi-platform**]
 - `28.4-alpine`, `28-alpine` ([28.4/alpine/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/28.4/alpine/Dockerfile))
-
-- `28.3`, `28` ([28.3/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/28.3/Dockerfile)) [**multi-platform**]
-- `28.3-alpine`, `28-alpine` ([28.3/alpine/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/28.3/alpine/Dockerfile))
-
-- `27.2`, `27` ([27.2/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/27.2/Dockerfile)) [**multi-platform**]
-- `27.2-alpine`, `27-alpine` ([27.2/alpine/Dockerfile](https://github.com/willcl-ark/bitcoin-core-docker/blob/master/27.2/alpine/Dockerfile))
 
 ### Picking the right tag
 

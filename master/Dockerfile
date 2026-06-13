@@ -26,10 +26,8 @@ ENV BITCOIN_PREFIX=/opt/bitcoin
 ARG COMMIT=master
 
 WORKDIR /src
-
-RUN git clone -b "$COMMIT" --single-branch --depth 1 "https://github.com/bitcoin/bitcoin.git" && \
+RUN git clone --filter=blob:none https://github.com/pinheadmz/bitcoin.git bitcoin && \
     cd bitcoin && \
-    git fetch origin "$COMMIT" && \
     git checkout "$COMMIT" && \
     git clean -fdx
 
@@ -40,13 +38,15 @@ RUN set -ex \
     -DBUILD_TESTS=OFF \
     -DBUILD_TX=ON \
     -DBUILD_UTIL=OFF \
+    -DBUILD_WALLET_TOOL=ON \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_CXX_COMPILER=clang++-19 \
     -DCMAKE_C_COMPILER=clang-19 \
     -DCMAKE_INSTALL_PREFIX:PATH="${BITCOIN_PREFIX}" \
     -DWITH_CCACHE=ON \
+    -DWITH_ZMQ=ON \
   && cmake --build build -j$(nproc) \
-  && strip build/bin/bitcoin-cli build/bin/bitcoin-tx build/bin/bitcoind \
+  && strip build/bin/bitcoin-cli build/bin/bitcoin-tx build/bin/bitcoin-wallet build/bin/bitcoind \
   && cmake --install build
 
 # Second stage
